@@ -19,6 +19,6 @@
       <h2>danh ba dien tu</h2>
     </div>
     <div class="col-3 my-4"> <a href="logout.php">Thoát</a></div>
-    
+    <h1>Trung lê </h1>
   </div>
 </div>
