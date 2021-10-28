@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Login.css">
     <title>Form-Login</title>
 </head>
 <body>
@@ -21,10 +22,23 @@
             </div>
 
             <button>Đăng nhập</button>
-            <span>Bạn chưa có tài khoản? Đăng kí<a href="" >Tại đây</a></span>
+            <span>Bạn chưa có tài khoản? Đăng kí<a href="" > Tại đây</a></span>
 
         </form>
     </div>
+
+    <script>
+        const formLogin = document.querySelectorAll('.form-text input')
+        const formLabel = document.querySelectorAll('.form-text label')
+        for(let i=0;i<2;i++){
+            formLogin[i].addEventListener("mouseover",function(){
+                formLabel[i].classList.add("focus")
+            })
+            formLogin[i].addEventListener("mouseout",function(){
+                formLabel[i].classList.remove("focus")
+            })
+        }
+    </script>
     
 </body>
 </html>
