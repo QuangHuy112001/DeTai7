@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <form class="form-login">
-            <h1>Login</h1>
+            <h1>Login admin</h1>
             <div class="form-text">
                 <label>Username</label>
                 <input type="text">
@@ -21,7 +21,7 @@
                 <input type="password">
             </div>
 
-            <button><a href="">Login</a></button>
+            <button><a href="user-list.php">Login</a></button>
 
         </form>
     </div>

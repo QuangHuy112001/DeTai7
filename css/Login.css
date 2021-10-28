@@ -24,7 +24,7 @@ a{
     width: 300px;
     height: 500px;
     background: #fff;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 40px 30px;
 
 }
@@ -37,7 +37,10 @@ a{
     margin-bottom:30px;
     background: var(--bg2);
     border: none;
-    color:#fff
+    color:#fff;
+    border-radius: 20px;
+    cursor: pointer;
+
 }
 
 .form-text{
