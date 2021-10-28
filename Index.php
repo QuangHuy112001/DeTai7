@@ -12,8 +12,8 @@
                         <ul class="navbar-nav ms-auto mb-2 mb-1g-0">
                             <nav class="navbar navbar-light ">
                                 <form class="container-fluid justify-content-start">
-                                    <button class="btn btn-outline-success me-2" type="button" href="#"><a href="Login.php" style="text-decoration: none; color:seagreen;">Đăng nhập</a></button>
-                                    <button class="btn btn-outline-success me-2" type="button" href="#"><a href="CreateAcc.php" style="text-decoration: none; color:seagreen;">Tạo blog của bạn</a></button>
+                                    <button class="btn btn-outline-success me-2" type="button" href="#"><a href="Login.php" style="text-decoration: none; color:seagreen;">Login</a></button>
+                                    <button class="btn btn-outline-success me-2" type="button" href="#"><a href="CreateAcc.php" style="text-decoration: none; color:seagreen;">Create Account</a></button>
                                 </form>
                             </nav>
                         </ul>
