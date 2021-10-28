@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Login.css">
+    <link rel="stylesheet" href="css/Login.css">
     <title>Form-Login</title>
 </head>
 <body>
@@ -21,8 +21,8 @@
                 <input type="password">
             </div>
 
-            <button>Đăng nhập</button>
-            <span>Bạn chưa có tài khoản? Đăng kí<a href="" > Tại đây</a></span>
+            <button><a href="">Đăng nhập</a></button>
+            <span>Bạn chưa có tài khoản? Đăng kí<a href="CreateAcc.php" > Tại đây</a></span>
 
         </form>
     </div>

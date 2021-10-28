@@ -31,7 +31,7 @@
                 <input type="Password check">
             </div>
 
-            <button>Submit</button>
+            <button>Tạo tài khoản</button>
            
 
         </form>
