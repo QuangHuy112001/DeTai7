@@ -10,9 +10,9 @@
 <body>
     <div class="container">
         <form class="form-login">
-            <h1>Login</h1>
+            <h1>Login Admin</h1>
             <div class="form-text">
-                <label>Username</label>
+                <label>Username admin</label>
                 <input type="text">
             </div>
 
@@ -22,7 +22,6 @@
             </div>
 
             <button><a href="">Login</a></button>
-            <span>Don't you have account? Create<a href="CreateAcc.php" > here</a></span>
 
         </form>
     </div>
