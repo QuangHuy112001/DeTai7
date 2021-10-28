@@ -21,8 +21,8 @@
                 <input type="password">
             </div>
 
-            <button><a href="">Đăng nhập</a></button>
-            <span>Bạn chưa có tài khoản? Đăng kí<a href="CreateAcc.php" > Tại đây</a></span>
+            <button><a href="">Wellcome to your blog</a></button>
+            <span>Don't you have account? Create<a href="CreateAcc.php" > here</a></span>
 
         </form>
     </div>
