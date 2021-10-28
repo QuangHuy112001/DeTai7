@@ -5,30 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Login.css">
-    <title>Form-Login</title>
+    <title>Form-Create Account</title>
 </head>
 <body>
     <div class="container">
         <form class="form-login">
-            <h1>Login</h1>
+            <h1>Create Account</h1>
             <div class="form-text">
                 <label>Username</label>
                 <input type="text">
             </div>
 
             <div class="form-text">
-                <label>Password</label>
-                <input type="password">
+                <label>Email</label>
+                <input type="Email">
             </div>
 
-            <button>Đăng nhập</button>
-            <span>Bạn chưa có tài khoản? Đăng kí<a href="" > Tại đây</a></span>
+            <div class="form-text">
+                <label>Password</label>
+                <input type="Password">
+            </div>
+
+            <div class="form-text">
+                <label>Password check</label>
+                <input type="Password check">
+            </div>
+
+            <button>Submit</button>
+           
 
         </form>
     </div>
 
     <script>
-        const formLogin = document.querySelectorAll('.form-text input')
+        const formdki = document.querySelectorAll('.form-text input')
         const formLabel = document.querySelectorAll('.form-text label')
         for(let i=0;i<2;i++){
             formLogin[i].addEventListener("mouseover",function(){
