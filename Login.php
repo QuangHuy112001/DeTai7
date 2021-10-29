@@ -10,9 +10,9 @@
 <body>
     <div class="container">
         <form class="form-login">
-            <h1>Login Admin</h1>
+            <h1>Login </h1>
             <div class="form-text">
-                <label>Username admin</label>
+                <label>Username </label>
                 <input type="text">
             </div>
 
