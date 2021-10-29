@@ -23,6 +23,23 @@
             </nav>
         </div>
     </div>
+ 
+
+    <header>
+        <div class="header-text">
+            <h1>Xuất bản ý tưởng theo cách riêng của bạn</h1>
+            <a href="#">Tạo Blog của bạn</a>
+        </div>
+
+    </header>
+
+    <header-2>
+        <div class="header-2-text">
+            <h1>Chọn thiết kế hoàn hảo</h1>
+            <h4>Đê tạo ra một website như mong muốn của bạn</h4>
+        </div>
+        
+    </header-2>
 <?php
     include 'footer.php';
 ?>

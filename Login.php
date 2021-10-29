@@ -21,7 +21,12 @@
                 <input type="password">
             </div>
 
+<<<<<<< HEAD
             <button><a href="">Login</a></button>
+=======
+            <button><a href="">Wellcome to your blog</a></button>
+            <span>Don't you have account? Create<a href="CreateAcc.php" > here</a></span>
+>>>>>>> Chinh
 
         </form>
     </div>
