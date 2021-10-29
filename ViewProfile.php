@@ -32,7 +32,7 @@ include 'header.php';
                         <hr>
                         <a href="Contact.php">Contact</a>
                         <hr>
-                        <a href="#">Setting</a>
+                        <a href="Setting.php">Setting</a>
                     </div>
 
                 </div>
