@@ -12,9 +12,7 @@ a{
     text-decoration: none;
     color:#fff
 }
-a:hover{
-    color:#217c3d
-}
+
 .container{
     display: flex;
     justify-content: center;
@@ -35,7 +33,7 @@ a:hover{
 .form-login h1{
     margin-bottom: 40px;
 }
-.form-login button{
+.btn {
     height: 35px;
     width: 100%;
     margin-bottom:30px;
@@ -43,6 +41,10 @@ a:hover{
     border: none;
     cursor: pointer;
     border-radius: 20px; 
+}
+
+.btn:hover{
+    background-color: #9b59b6;
 }
 
 .form-text{
