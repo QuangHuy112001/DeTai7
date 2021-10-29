@@ -14,7 +14,7 @@
                                 <form class="container-fluid justify-content-start">
                                     <button class="btn btn-outline-success me-2" type="button" href="#"><a href="Login.php" style="text-decoration: none; color:seagreen;">Login</a></button>
                                     <button class="btn btn-outline-success me-2" type="button" href="#"><a href="CreateAcc.php" style="text-decoration: none; color:seagreen;">Create Account</a></button>
-                                    <button class="btn me-2" type="button" href="#"><a href="#" style="text-decoration: none; color:grey;">Admin</a></button>
+                                    <button class="btn me-2" type="button" href="#"><a href="admin/admin-login.php" style="text-decoration: none; color:grey;">Admin</a></button>
                                 </form>
                             </nav>
                         </ul>
@@ -36,7 +36,7 @@
     <header-2>
         <div class="header-2-text">
             <h1>Chọn thiết kế hoàn hảo</h1>
-            <h4>Đê tạo ra một website như mong muốn của bạn</h4>
+            <h4>Để tạo ra một website như mong muốn của bạn</h4>
         </div>
         
     </header-2>
