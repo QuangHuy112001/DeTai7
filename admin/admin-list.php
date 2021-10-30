@@ -1,5 +1,5 @@
 <?php include('constants.php'); ?>
-<?php include('login-check.php')?>
+<?php include('login-check.php');?>
 <div class="main-content">
     <div class="wrapper">
         <h1>Manage Users</h1>
@@ -88,7 +88,7 @@
                         ?>
                         <tbody>
                         <tr>
-                            <th scope="row"><?php echo $sn++; ?></th>
+                            <th scope="row"><?php echo $sn++; ?> </th>
                             <td><?php echo $full_name; ?></td>
                             <td><?php echo $username; ?></td>
                             <td>
