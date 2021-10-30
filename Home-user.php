@@ -36,17 +36,17 @@
         <div class="container">
             <!--======================== LEFT ==========================-->
             <div class="left">
-                <a class="profile">
+                <div class="profile">
                     <div class="profile-photo">
                         <img src="img/avatar-user.png">
                     </div>
                     <div class="handle">
-                        <h4>Lê Trung</h4>
+                        <a href="ViewProfile.php"><h4>Lê Trung</h4></a>
                         <p class="text-muted">
                             20 tuổi - Cung cự giải
                         </p>
                     </div>
-                </a>
+                </div>
 
                 <!-------------------- SIDEBAR ------------------------->
                 <div class="sidebar">
