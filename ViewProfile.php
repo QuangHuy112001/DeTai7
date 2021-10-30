@@ -30,9 +30,9 @@ include 'header.php';
                         <h3>Quang Huy</h3>
                         <a href="#">Home</a>
                         <hr>
-                        <a href="#">Contact</a>
+                        <a href="Contact.php">Contact</a>
                         <hr>
-                        <a href="#">Setting</a>
+                        <a href="Setting.php">Setting</a>
                     </div>
 
                 </div>
