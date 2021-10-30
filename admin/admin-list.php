@@ -1,10 +1,14 @@
-<?php include('constants.php'); ?>
-<?php include('login-check.php');?>
-<div class="main-content">
-    <div class="wrapper">
-        <h1>Manage Users</h1>
-        <hr>
-        <?php 
+<?php include('menu.php'); ?>
+
+
+        <!-- Main Content Section Starts -->
+        <div class="main-content">
+            <div class="wrapper">
+                <h1>Manage Users</h1>
+
+                <br />
+
+                <?php 
                     if(isset($_SESSION['add']))
                     {
                         echo $_SESSION['add']; //Displaying Session Message
@@ -41,75 +45,83 @@
                         unset($_SESSION['change-pwd']);
                     }
 
-        ?>
-        <br><br><br>
+                ?>
+                <br><br><br>
 
-        <a href="" class="btn-primary">Add new admin</a>
+                <!-- Button to Add Admin -->
+                <a href="add-admin.php" class="btn-primary">Add New User</a>
 
-        <br /><br /><br />
+                <br /><br /><br />
 
-        <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-            <th scope="col">#</th>
-            <th scope="col">Full_name</th>
-            <th scope="col">User_name</th>
-            <th scope="col">Actions</th>
-            </tr>
-        </thead>
-        <?php
-            $sql = "SELECT admin_id,admin_fullname,admin_username FROM tbl_admin";
-            //Execute the Query
-            $res = mysqli_query($conn, $sql);
+                <table class="tbl-full">
+                    <tr>
+                        <th>#</th>
+                        <th>Full Name</th>
+                        <th>Username</th>
+                        <th>Actions</th>
+                    </tr>
 
-            //CHeck whether the Query is Executed of Not
-            if($res==TRUE)
-            {
-                // Count Rows to CHeck whether we have data in database or not
-                $count = mysqli_num_rows($res); // Function to get all the rows in database
+                    
+                    <?php 
+                        //Query to Get all Admin
+                        $sql = "SELECT * FROM tbl_admin";
+                        //Execute the Query
+                        $res = mysqli_query($conn, $sql);
 
-                $sn=1; //Create a Variable and Assign the value
+                        //CHeck whether the Query is Executed of Not
+                        if($res==TRUE)
+                        {
+                            // Count Rows to CHeck whether we have data in database or not
+                            $count = mysqli_num_rows($res); // Function to get all the rows in database
 
-                //CHeck the num of rows
-                if($count>0)
-                {
-                    //WE HAve data in database
-                    while($rows=mysqli_fetch_assoc($res))
-                    {
-                        //Using While loop to get all the data from database.
-                        //And while loop will run as long as we have data in database
+                            $sn=1; //Create a Variable and Assign the value
 
-                        //Get individual DAta
-                        $id=$rows['admin_id'];
-                        $full_name=$rows['admin_fullname'];
-                        $username=$rows['admin_username'];
+                            //CHeck the num of rows
+                            if($count>0)
+                            {
+                                //WE HAve data in database
+                                while($rows=mysqli_fetch_assoc($res))
+                                {
+                                    //Using While loop to get all the data from database.
+                                    //And while loop will run as long as we have data in database
 
-                        //Display the Values in our Table
-                        ?>
-                        <tbody>
-                        <tr>
-                            <th scope="row"><?php echo $id; ?> </th>
-                            <td><?php echo $full_name; ?></td>
-                            <td><?php echo $username; ?></td>
-                            <td>
-                                <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn-primary">Change Password</a>
-                                <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>
-                                <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a>
-                            </td>
-                        </tr>
-                        </tbody>
-                        <?php
+                                    //Get individual DAta
+                                    $id=$rows['admin_id'];
+                                    $full_name=$rows['admin_fullname'];
+                                    $username=$rows['admin_username'];
 
-                    }
-                }
-                else
-                {
-                    //We Do not Have Data in Database
-                }
-            }
-        ?>
-        </table>
-        
-    </div>
-</div>
+                                    //Display the Values in our Table
+                                    ?>
+                                    
+                                    <tr>
+                                        <td><?php echo $sn++; ?>. </td>
+                                        <td><?php echo $full_name; ?></td>
+                                        <td><?php echo $username; ?></td>
+                                        <td>
+                                            <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn-primary">Change Password</a>
+                                            <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>
+                                            <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a>
+                                        </td>
+                                    </tr>
 
+                                    <?php
+
+                                }
+                            }
+                            else
+                            {
+                                //We Do not Have Data in Database
+                            }
+                        }
+
+                    ?>
+
+                        
+                    
+                </table>
+
+            </div>
+        </div>
+        <!-- Main Content Setion Ends -->
+
+<?php include('footer.php'); ?>
