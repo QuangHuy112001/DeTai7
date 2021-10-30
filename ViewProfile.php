@@ -27,7 +27,7 @@ include 'header.php';
                 <div class="card-body">
                     <img src="img/avatar-user.png" alt="" class="rounded-circle" width="150">
                     <div class="mt-3">
-                        <h3>Quang Huy</h3>
+                        <h3>Tuấn Trung</h3>
                         <a href="#">Home</a>
                         <hr>
                         <a href="Contact.php">Contact</a>
@@ -48,7 +48,7 @@ include 'header.php';
                             <h6>Full name</h6>
                         </div>
                         <div class="col-md-9 text-secondary">
-                            Bùi Hữu Quang Huy
+                            Lê Tuấn trung
                         </div>
                     </div>
                     <hr>
@@ -75,7 +75,7 @@ include 'header.php';
                             <h6>Email</h6>
                         </div>
                         <div class="col-md-9 text-secondary">
-                            huuhuy11112001@gmail.com
+                            letrung16072001@gmail.com
                         </div>
                     </div>
                     <hr>
