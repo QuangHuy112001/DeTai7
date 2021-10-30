@@ -1,56 +1,57 @@
 <?php include('constants.php'); ?>
 <html>
-<head>
-    <link rel="stylesheet" href="admin1.css">
-    <title>Form-Login</title>
-</head>
-<body>
-    <div class="container">
-        <form class="form-login">
-            <h1>Login admin</h1>
-            <?php 
-                if(isset($_SESSION['login']))
-                {
-                    echo $_SESSION['login'];
-                    unset($_SESSION['login']);
-                }
+    <head>
+        <link rel="stylesheet" href="admin1.css">
+        <title>Form-Login</title>
+    </head>
+    <body>
+        <div class="container">
+            <form class="form-login">
+                <h1>Login admin</h1>
+                <br>
+                <?php 
+                    if(isset($_SESSION['login']))
+                    {
+                        echo $_SESSION['login'];
+                        unset($_SESSION['login']);
+                    }
 
-                if(isset($_SESSION['no-login-message']))
-                {
-                    echo $_SESSION['no-login-message'];
-                    unset($_SESSION['no-login-message']);
-                }
-            ?>
-            <form action="" method="POST">
-                <div class="form-text">
-                    <label>Username</label>
-                    <input type="text" name="admin_username">
-                </div>
+                    if(isset($_SESSION['no-login-message']))
+                    {
+                        echo $_SESSION['no-login-message'];
+                        unset($_SESSION['no-login-message']);
+                    }
+                ?>
+                <form action="" method="POST">
+                    <div class="form-text">
+                        <label>Username</label>
+                        <input type="text" name="admin_username">
+                    </div>
 
-                <div class="form-text">
-                    <label>Password</label>
-                    <input type="password" name="admin_password">
-                </div>
-                <input type="submit" name="submit" value="Login" class="btn">
+                    <div class="form-text">
+                        <label>Password</label>
+                        <input type="password" name="admin_password">
+                    </div>
+                    <input type="submit" name="submit" value="Login" class="btn">
+                </form>
+
             </form>
+        </div>
 
-        </form>
-    </div>
-
-    <script>
-        const formLogin = document.querySelectorAll('.form-text input')
-        const formLabel = document.querySelectorAll('.form-text label')
-        for(let i=0;i<2;i++){
-            formLogin[i].addEventListener("mouseover",function(){
-                formLabel[i].classList.add("focus")
-            })
-            formLogin[i].addEventListener("mouseout",function(){
-                formLabel[i].classList.remove("focus")
-            })
-        }
-    </script>
-    
-</body>
+        <script>
+            const formLogin = document.querySelectorAll('.form-text input')
+            const formLabel = document.querySelectorAll('.form-text label')
+            for(let i=0;i<2;i++){
+                formLogin[i].addEventListener("mouseover",function(){
+                    formLabel[i].classList.add("focus")
+                })
+                formLogin[i].addEventListener("mouseout",function(){
+                    formLabel[i].classList.remove("focus")
+                })
+            }
+        </script>
+        
+    </body>
 </html>
 <?php 
 

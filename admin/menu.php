@@ -18,8 +18,9 @@
         <div class="menu text-center">
             <div class="wrapper">
                 <ul>
-                    <li><a href="#">users</a></li>
+                    <li><a href="#">Users</a></li>
                     <li><a href="admin-list.php">Admin</a></li>
+                    <li><a href="logout.php">Logout</a></li>
                 </ul>
             </div>
         </div>
