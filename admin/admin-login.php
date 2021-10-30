@@ -67,7 +67,7 @@
         $password = mysqli_real_escape_string($conn, $raw_password);
 
         //2. SQL to check whether the user with username and password exists or not
-        $sql = "SELECT * FROM tbl_admin WHERE username='$username' AND password='$password'";
+        $sql = "SELECT * FROM tbl_admin WHERE admin_username='$username' AND admin_password='$password'";
 
         //3. Execute the Query
         $res = mysqli_query($conn, $sql);
@@ -89,7 +89,7 @@
             //User not Available and Login FAil
             $_SESSION['login'] = "<div class='error text-center'>Username or Password did not match.</div>";
             //REdirect to HOme Page/Dashboard
-            header('location:'.SITEURL.'admin/login.php');
+            header('location:'.SITEURL.'admin/admin-login.php');
         }
 
 

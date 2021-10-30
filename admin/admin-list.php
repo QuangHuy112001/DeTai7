@@ -88,7 +88,7 @@
                         ?>
                         <tbody>
                         <tr>
-                            <th scope="row"><?php echo $sn++; ?> </th>
+                            <th scope="row"><?php echo $id; ?> </th>
                             <td><?php echo $full_name; ?></td>
                             <td><?php echo $username; ?></td>
                             <td>
