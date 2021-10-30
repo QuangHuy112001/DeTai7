@@ -16,7 +16,7 @@
     <nav>
         <div class="container">
             <h2 class="log">
-                Blog
+                <img src="img/logo.png" alt="">
             </h2>
             <div class="search-bar">
                 <i class="uil uil-search"></i>
@@ -55,7 +55,7 @@
                         <h3>Home</h3>
                     </a>
                     <a class="menu-item" id="notifications">
-                        <span><i class="uil uil-bell"><small class="notification-count">9+</small></i></span>
+                        <span><i class="uil uil-bell"></i></span>
                         <h3>Notifications</h3>
                         <!-------------------- NOTIFICATION POPUP ---------------->
                         <div class="notifications-popup">
@@ -68,56 +68,11 @@
                                     <small class="text-muted">2 DAYS AGO</small>
                                 </div>
                             </div>
-                            <div>
-                                <div class="profile-photo">
-                                    <img src="img/avatar-user.png">
-                                </div>
-                                <div class="notification-body">
-                                    <b>Huy Bùi</b> commented on your post
-                                    <small class="text-muted">1 HOUR AGO</small>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="profile-photo">
-                                    <img src="img/avatar-user.png">
-                                </div>
-                                <div class="notification-body">
-                                    <b>Chinh Vũ</b> and <b>400 others </b> liked your post
-                                    <small class="text-muted">4 MINUTES AGO</small>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="profile-photo">
-                                    <img src="img/avatar-user.png">
-                                </div>
-                                <div class="notification-body">
-                                    <b>Chinh Vũ</b> commented on a post you are tagged in
-                                    <small class="text-muted">2 DAYS AGO</small>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="profile-photo">
-                                    <img src="img/avatar-user.png">
-                                </div>
-                                <div class="notification-body">
-                                    <b>Hoàng Anh</b> commented on a post you are tagged in
-                                    <small class="text-muted">1 HOUR AGO</small>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="profile-photo">
-                                    <img src="img/avatar-user.png">
-                                </div>
-                                <div class="notification-body">
-                                    <b>Châm Anh</b> commented on your post
-                                    <small class="text-muted">1 HOUR AGO</small>
-                                </div>
-                            </div>
                         </div>
                         <!-------------------- END NOTIFICATION POPUP ---------------->
                     </a>
                     <a class="menu-item" id="messages-notification">
-                        <span><i class="uil uil-envelope-alt"><small class="notification-count">6</small></i></span>
+                        <span><i class="uil uil-envelope-alt"></i></span>
                         <h3>Messagse</h3>
                     </a>
                     <a class="menu-item" id="theme">
@@ -131,6 +86,7 @@
                 </div>
                 <!------------------- END OF SIDEBAR -------------------->
                 <label for="create-post" class="btn btn-primary">Create Post</label>
+                <label for="log-out" class="btn btn-primary"><a href="Index.php" style="color: white;">Log Out</a></label>
             </div>
             <!------------------- END OF LEFT -------------------->
 
@@ -143,7 +99,7 @@
                         <img src="img/avatar-user.png">
                     </div>
                     <input type="text" placeholder="What's on your mind?" id="create-post">
-                    <input type="submit" value="Post" class="btn btn-primary">
+                    <input type="submit" name="btn_submit" value="Post" onclick="onClick()" class="btn btn-primary">
                 </form>
 
                 <!------------------- FEEDS --------------------->
@@ -157,7 +113,7 @@
                                 </div>
                                 <div class="ingo">
                                     <h3>Lê Trung</h3>
-                                    <small>Hà Nội, 15 MINUTES AGO</small>
+                                    <small>31/10/2021</small>
                                 </div>
                             </div>
                             <span class="edit">
@@ -165,116 +121,15 @@
                             </span>
                         </div>
 
-                        <div class="photo">
-                            <img src="img/member-1.png">
+                        <div>
+                            <script>
+                                function onClick(){
+                                    var post = document.getElementById('create-post').value;
+                                }
+                            </script>
                         </div>
-
-                        <div class="action-buttons">
-                            <div class="interaction-buttons">
-                                <span><i class="uil uil-heart"></i></span>
-                                <span><i class="uil uil-comment-dots"></i></span>
-                                <span><i class="uil uil-share-alt"></i></span>
-                            </div>
-                        </div>
-
-                        <div class="liked-by">
-                            <span><img src="img/avatar-user.png"></span>
-                            <span><img src="img/avatar-user.png"></span>
-                            <span><img src="img/avatar-user.png"></span>
-                            <p>Liked by <b>Ernest Achiever</b> and <b>2,323 others</b></p>
-                        </div>
-
-                        <div class="caption">
-                            <p><b>Hoàng Anh</b>Ảnh đẹp quá<span class="harsh-tag">#lifestyle</span></p>
-                        </div>
-                        <div class="comments text-muted">View all 277 comments</div>
                     </div>
                     <!---------------- END OF FEED ----------------->
-                    <!------------------- FEED 2 --------------------->
-                    <div class="feed">
-                        <div class="head">
-                            <div class="user">
-                                <div class="profile-photo">
-                                    <img src="img/avatar-user.png">
-                                </div>
-                                <div class="ingo">
-                                    <h3>Huy Bùi</h3>
-                                    <small>Quảng Ninh, 2 HOURS AGO</small>
-                                </div>
-                            </div>
-                            <span class="edit">
-                                <i class="uil uil-ellipsis-h"></i>
-                            </span>
-                        </div>
-
-                        <div class="photo">
-                            <img src="img/member-2.png">
-                        </div>
-
-                        <div class="action-buttons">
-                            <div class="interaction-buttons">
-                                <span><i class="uil uil-heart"></i></span>
-                                <span><i class="uil uil-comment-dots"></i></span>
-                                <span><i class="uil uil-share-alt"></i></span>
-                            </div>
-                        </div>
-
-                        <div class="liked-by">
-                            <span><img src="img/avatar-user.png"></span>
-                            <span><img src="img/avatar-user.png"></span>
-                            <span><img src="img/avatar-user.png"></span>
-                            <p>Liked by <b>Ernest Achiever</b> and <b>2,323 others</b></p>
-                        </div>
-
-                        <div class="caption">
-                            <p><b>Hoàng Anh</b>Ảnh đẹp quá<span class="harsh-tag">#lifestyle</span></p>
-                        </div>
-                        <div class="comments text-muted">View all 3,473 comments</div>
-                    </div>
-                    <!---------------- END OF FEED ----------------->
-                    <!------------------- FEED 3 --------------------->
-                    <div class="feed">
-                        <div class="head">
-                            <div class="user">
-                                <div class="profile-photo">
-                                    <img src="img/avatar-user.png">
-                                </div>
-                                <div class="ingo">
-                                    <h3>Chinh Vũ </h3>
-                                    <small>Thái Bình, 1 MINUTES AGO</small>
-                                </div>
-                            </div>
-                            <span class="edit">
-                                <i class="uil uil-ellipsis-h"></i>
-                            </span>
-                        </div>
-
-                        <div class="photo">
-                            <img src="img/member-3.png">
-                        </div>
-
-                        <div class="action-buttons">
-                            <div class="interaction-buttons">
-                                <span><i class="uil uil-heart"></i></span>
-                                <span><i class="uil uil-comment-dots"></i></span>
-                                <span><i class="uil uil-share-alt"></i></span>
-                            </div>
-                        </div>
-
-                        <div class="liked-by">
-                            <span><img src="img/avatar-user.png"></span>
-                            <span><img src="img/avatar-user.png"></span>
-                            <span><img src="img/avatar-user.png"></span>
-                            <p>Liked by <b>Ernest Achiever</b> and <b>2,323 others</b></p>
-                        </div>
-
-                        <div class="caption">
-                            <p><b>Hoàng Anh</b>Ảnh đẹp quá<span class="harsh-tag">#lifestyle</span></p>
-                        </div>
-                        <div class="comments text-muted">View all 277 comments</div>
-                    </div>
-                    <!---------------- END OF FEED ----------------->
-
                 </div>
                 <!------------------------------- END OF FEEDS ------------------------------------>
             </div>
