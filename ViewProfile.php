@@ -28,7 +28,7 @@ include 'header.php';
                     <img src="img/avatar-user.png" alt="" class="rounded-circle" width="150">
                     <div class="mt-3">
                         <h3>Tuấn Trung</h3>
-                        <a href="#">Home</a>
+                        <a href="Home-user.php">Home</a>
                         <hr>
                         <a href="Contact.php">Contact</a>
                         <hr>
