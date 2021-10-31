@@ -54,7 +54,7 @@
     </body>
 </html>
 <?php 
-
+    include('constants.php');
     //CHeck whether the Submit Button is Clicked or NOt
     if(isset($_POST['submit']))
     {
@@ -62,10 +62,10 @@
         //1. Get the Data from Login form
         // $username = $_POST['username'];
         // $password = md5($_POST['admin_password']);
-        $username =  $_POST['username'];
+        $username =mysqli_real_escape_string($conn, $_POST['username']);
         
         $raw_password = password_hash($_POST['password'],PASSWORD_BCRYPT);
-        $password = $raw_password;
+        $password = mysqli_real_escape_string($conn, $raw_password);
 
         //2. SQL to check whether the user with username and password exists or not
         $sql = "SELECT * FROM tbl_admin WHERE admin_username='$username' AND admin_password='$password'";
@@ -91,7 +91,6 @@
             //REdirect to HOme Page/Dashboard
             header('location:'.SITEURL.'admin/admin-login.php');
         }
-
 
     }
 ?>

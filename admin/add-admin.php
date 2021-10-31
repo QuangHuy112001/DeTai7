@@ -2,7 +2,7 @@
 
 <div class="main-content">
     <div class="wrapper">
-        <h1>Add Admin</h1>
+        <h1 class="text-center">Add Admin</h1>
 
         <br><br>
 
@@ -40,7 +40,7 @@
 
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="submit" value="Add Admin" class="btn-secondary">
+                        <input type="submit" name="submit" value="Add Admin" class="btn-primary">
                     </td>
                 </tr>
 

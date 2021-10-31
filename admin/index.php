@@ -4,7 +4,7 @@
         <!-- Main Content Section Starts -->
         <div class="main-content">
             <div class="wrapper">
-                <h1>Manage Users</h1>
+                <h1 class="text-center">Manage Users</h1>
 
                 <br />
 
@@ -46,16 +46,16 @@
                     }
 
                 ?>
-                <br><br><br>
+                <br><br>
 
                 <!-- Button to Add Admin -->
                 <a href="add-admin.php" class="btn-primary">Add New User</a>
 
-                <br /><br /><br />
+                <br /><br />
 
-                <table class="tbl-full">
+                <table class="tbl-full table table-striped table-hover">
                     <tr>
-                        <th>#</th>
+                        <th>ID</th>
                         <th>Full Name</th>
                         <th>Username</th>
                         <th>Actions</th>
@@ -73,9 +73,6 @@
                         {
                             // Count Rows to CHeck whether we have data in database or not
                             $count = mysqli_num_rows($res); // Function to get all the rows in database
-
-                            $sn=1; //Create a Variable and Assign the value
-
                             //CHeck the num of rows
                             if($count>0)
                             {
@@ -94,7 +91,7 @@
                                     ?>
                                     
                                     <tr>
-                                        <td><?php echo $sn++; ?>. </td>
+                                        <td><?php echo $id ?></td>
                                         <td><?php echo $full_name; ?></td>
                                         <td><?php echo $username; ?></td>
                                         <td>

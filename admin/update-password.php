@@ -2,7 +2,7 @@
 
 <div class="main-content">
     <div class="wrapper">
-        <h1>Change Password</h1>
+        <h1 class="text-center">Change Password</h1>
         <br><br>
 
         <?php 

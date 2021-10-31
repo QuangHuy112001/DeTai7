@@ -2,7 +2,7 @@
 
 <div class="main-content">
     <div class="wrapper">
-        <h1>Update Admin</h1>
+        <h1 class="text-center">Update Admin</h1>
 
         <br><br>
 
