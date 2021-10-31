@@ -25,12 +25,12 @@
                 <form action="" method="POST">
                     <div class="form-text">
                         <label>Username</label>
-                        <input type="text" name="admin_username">
+                        <input type="text" name="username">
                     </div>
 
                     <div class="form-text">
                         <label>Password</label>
-                        <input type="password" name="admin_password">
+                        <input type="password" name="password">
                     </div>
                     <input type="submit" name="submit" value="Login" class="btn">
                 </form>
@@ -60,12 +60,12 @@
     {
         //Process for Login
         //1. Get the Data from Login form
-        // $username = $_POST['admin_username'];
+        // $username = $_POST['username'];
         // $password = md5($_POST['admin_password']);
-        $username = mysqli_real_escape_string($conn, $_POST['admin_username']);
+        $username =  $_POST['username'];
         
-        $raw_password = md5($_POST['admin_password']);
-        $password = mysqli_real_escape_string($conn, $raw_password);
+        $raw_password = password_hash($_POST['password'],PASSWORD_BCRYPT);
+        $password = $raw_password;
 
         //2. SQL to check whether the user with username and password exists or not
         $sql = "SELECT * FROM tbl_admin WHERE admin_username='$username' AND admin_password='$password'";
@@ -82,7 +82,7 @@
             $_SESSION['user'] = $username; //TO check whether the user is logged in or not and logout will unset it
 
             //REdirect to HOme Page/Dashboard
-            header('location:'.SITEURL.'admin/admin-list.php');
+            header('location:'.SITEURL.'admin/');
         }
         else
         {

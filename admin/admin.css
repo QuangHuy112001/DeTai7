@@ -68,7 +68,7 @@ table tr td{
     font-weight: bold;
 }
 .btn-danger:hover{
-    background-color: #ff4757;
+    background-color: #631cd4;
 }
 
 .success{
@@ -93,10 +93,10 @@ table tr td{
 .menu ul li a{
     text-decoration: none;
     font-weight: bold;
-    color: #ff6b81;
+    color: #8269f3;
 }
 .menu ul li a:hover{
-    color: #ff4757;
+    color: #4e44d8;
 }
 
 /* CSS for main-content */
@@ -116,7 +116,7 @@ table tr td{
 
 /* CSS for Footer */
 .footer{
-    background-color: #ff4757;
+    background-color:#4a48d1;
     color: white;
 }
 

@@ -68,7 +68,7 @@
         //1. Get the Data from form
         $full_name = $_POST['full_name'];
         $username = $_POST['username'];
-        $password = md5($_POST['password']); //Password Encryption with MD5
+        $password = password_hash($_POST['password'],PASSWORD_BCRYPT); //Password Encryption with MD5
 
         //2. SQL Query to Save the data into database
         $sql = "INSERT INTO tbl_admin SET 
@@ -88,7 +88,7 @@
             //Create a Session Variable to Display Message
             $_SESSION['add'] = "<div class='success'>Admin Added Successfully.</div>";
             //Redirect Page to Manage Admin
-            header("location:".SITEURL.'admin/admin-list.php');
+            header("location:".SITEURL.'admin/');
         }
         else
         {

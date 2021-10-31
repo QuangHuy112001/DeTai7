@@ -1,14 +1,14 @@
 <?php 
 
     include('constants.php'); 
-    include('login-check.php');
+    // include('login-check.php');
 
 ?>
 
 
 <html>
     <head>
-        <title>Food Order Website - Home Page</title>
+        <title>Blog Website - Home Page</title>
 
         <link rel="stylesheet" href="admin.css">
     </head>
@@ -19,8 +19,8 @@
             <div class="wrapper">
                 <ul>
                     <li><a href="#">Users</a></li>
-                    <li><a href="admin-list.php">Admin</a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><a href="index.php">Admin</a></li>
+                    
                 </ul>
             </div>
         </div>
