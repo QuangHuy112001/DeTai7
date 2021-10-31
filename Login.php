@@ -21,8 +21,6 @@
                 <label>Password</label>
                 <input type="password" id="password" name="password" required>
             </div>
-
-            <button><a href="">Login</a></button>
             <button><a href="">Wellcome to your blog</a></button>
             <span>Don't you have account? Create<a href="CreateAcc.php" > here</a></span>
         </form>
