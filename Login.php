@@ -1,13 +1,4 @@
-<?php
-    require 'init.php';
-    if(isset($_POST['username']) & isset($_POST['password'])){
-        $result = $user_obj -> loginUser($_POST['username'],$_POST['password']);
-    }
-    if(isset($_SESSION['username'])){
-        header('location: profile.php');
-        exit;
-    }
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
