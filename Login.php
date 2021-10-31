@@ -1,3 +1,13 @@
+<?php
+    require 'init.php';
+    if(isset($_POST['username']) & isset($_POST['password'])){
+        $result = $user_obj -> loginUser($_POST['username'],$_POST['password']);
+    }
+    if(isset($_SESSION['username'])){
+        header('location: profile.php');
+        exit;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,12 +23,12 @@
             <h1>Login </h1>
             <div class="form-text">
                 <label>Username </label>
-                <input type="text">
+                <input type="text" id="username" name="username" spellcheck="false" required>
             </div>
 
             <div class="form-text">
                 <label>Password</label>
-                <input type="password">
+                <input type="password" id="password" name="password" required>
             </div>
 
             <button><a href="">Login</a></button>
