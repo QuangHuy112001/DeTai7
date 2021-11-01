@@ -1,11 +1,11 @@
 <?php
 require 'includes/init.php';
 // IF USER MAKING LOGIN REQUEST
-if (isset($_POST['username']) && isset($_POST['password'])) {
-    $result = $user_obj->loginUser($_POST['username'], $_POST['password']);
+if (isset($_POST['email']) && isset($_POST['password'])) {
+    $result = $user_obj->loginUser($_POST['email'], $_POST['password']);
 }
 // IF USER ALREADY LOGGED IN
-if (isset($_SESSION['username'])) {
+if (isset($_SESSION['email'])) {
     header('Location: Home-user.php');
     exit;
 }
@@ -25,8 +25,8 @@ if (isset($_SESSION['username'])) {
     <div class="main_container login_signup_container">
         <h1>Login</h1>
         <form action="" method="POST">
-        <label for="username">Name</label>
-            <input type="text" id="username" name="username" spellcheck="false" placeholder="Enter your user name" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" spellcheck="false" placeholder="Enter your email address" required>
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
             <input type="submit" value="Login">
@@ -44,4 +44,5 @@ if (isset($_SESSION['username'])) {
         </form>
     </div>
 </body>
+
 </html>

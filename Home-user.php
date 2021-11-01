@@ -20,6 +20,7 @@ $get_frnd_num = $frnd_obj->get_all_friends($_SESSION['user_id'], false);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -118,7 +119,7 @@ $get_frnd_num = $frnd_obj->get_all_friends($_SESSION['user_id'], false);
                         <img src="img/avatar-user.png">
                     </div>
                     <input type="text" placeholder="What's on your mind?" id="create-post">
-                    <input type="submit" name="btn_submit" value="Post" onclick="onClick()" class="btn btn-primary">
+                    <input type="submit" name="btn_submit" value="Post" class="btn btn-primary">
                 </form>
 
                 <!------------------- FEEDS --------------------->
@@ -138,14 +139,6 @@ $get_frnd_num = $frnd_obj->get_all_friends($_SESSION['user_id'], false);
                             <span class="edit">
                                 <i class="uil uil-ellipsis-h"></i>
                             </span>
-                        </div>
-
-                        <div>
-                            <script>
-                                function onClick(){
-                                    var post = document.getElementById('create-post').value;
-                                }
-                            </script>
                         </div>
                     </div>
                     <!---------------- END OF FEED ----------------->

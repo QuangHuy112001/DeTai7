@@ -5,12 +5,12 @@ class User{
     protected $user_email;
     protected $user_pass;
     protected $hash_pass;
-    
+
     function __construct($db_connection){
         $this->db = $db_connection;
     }
 
-    // SING UP USER
+    // SIGN UP USER
     function singUpUser($username, $email, $password){
         try{
             $this->user_name = trim($username);
@@ -57,23 +57,23 @@ class User{
     }
 
     // LOGIN USER
-    function loginUser($username, $password){
+    function loginUser($email, $password){
         
         try{
-            $this->username = trim($username);
+            $this->user_email = trim($email);
             $this->user_pass = trim($password);
 
-            $find_username = $this->db->prepare("SELECT * FROM `tbl_user` WHERE username = ?");
-            $find_username->execute([$this->username]);
+            $find_email = $this->db->prepare("SELECT * FROM `tbl_user` WHERE user_email = ?");
+            $find_email->execute([$this->user_email]);
             
-            if($find_username->rowCount() === 1){
-                $row = $find_username->fetch(PDO::FETCH_ASSOC);
+            if($find_email->rowCount() === 1){
+                $row = $find_email->fetch(PDO::FETCH_ASSOC);
 
                 $match_pass = password_verify($this->user_pass, $row['user_password']);
                 if($match_pass){
                     $_SESSION = [
                         'user_id' => $row['user_id'],
-                        'username' => $row['username']
+                        'email' => $row['user_email']
                     ];
                     header('Location: Home-user.php');
                 }
@@ -96,9 +96,9 @@ class User{
     // FIND USER BY ID
     function find_user_by_id($id){
         try{
-            $find_user = $this->db->prepare("SELECT * FROM `tbl_user` WHERE id = ?");
+            $find_user = $this->db->prepare("SELECT * FROM `tbl_user` WHERE user_id = ?");
             $find_user->execute([$id]);
-            if($find_user->rowCount() === 1){
+            if($find_user->rowCount() === 8){
                 return $find_user->fetch(PDO::FETCH_OBJ);
             }
             else{
