@@ -1,6 +1,13 @@
 <?php
 require 'includes/init.php';
 if(isset($_SESSION['user_id']) && isset($_SESSION['email'])){
+    // $user_data = $user_obj->find_user_by_id($_SESSION['user_id']);
+    // if($user_data ===  false){
+    //     header('Location: logout.php');
+    //     exit;
+    // }
+    // // FETCH ALL USERS WHERE ID IS NOT EQUAL TO MY ID
+    // $all_users = $user_obj->all_users($_SESSION['user_id']);
 }
 else{
     header('Location: logout.php');
@@ -131,6 +138,16 @@ else{
                     </div>
                     <!---------------- END OF FEED ----------------->
                 </div>
+
+                <div class="feed">
+                        <div class="head">
+                            <div class="user">
+                            <?php require 'posts_xuly.php';?>
+                        </div>
+                    </div>
+                    <!---------------- END OF FEED ----------------->
+                </div>
+               
                 <!------------------------------- END OF FEEDS ------------------------------------>
             </div>
             <!--======================== END OF MIDDLE ==========================-->

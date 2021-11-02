@@ -25,10 +25,11 @@
 <input type="file" name="image" class="hinhanh"><br/><br/></td>
   </tr>
   <tr>
-    <td colspan="2" align="center"><input type="submit" name="btn_submit" value="Save Data"/></td>
+    <a href="Home-user.php"><td colspan="2" align="center"><input type="submit" name="btn_submit" value="Save Data"/></td></a>
   </tr>
 </table>
 </form>
+<a href="Home-user.php">Back to your home</a>
 <h2>Nội dung trong Database</h2>
 <?php require 'posts_xuly.php';?>
 </body>
