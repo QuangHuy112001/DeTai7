@@ -4,17 +4,11 @@
         <!-- Main Content Section Starts -->
         <div class="main-content">
             <div class="wrapper">
-                <h1 class="text-center">Manage admin</h1>
+                <h1 class="text-center">Manage Users</h1>
 
                 <br />
 
                 <?php 
-                    if(isset($_SESSION['add']))
-                    {
-                        echo $_SESSION['add']; //Displaying Session Message
-                        unset($_SESSION['add']); //REmoving Session Message
-                    }
-
                     if(isset($_SESSION['delete']))
                     {
                         echo $_SESSION['delete'];
@@ -47,24 +41,25 @@
 
                 ?>
                 <br><br>
-
-                <!-- Button to Add Admin -->
-                <a href="add-admin.php" class="btn-primary">Add New User</a>
-
                 <br /><br />
 
                 <table class="tbl-full table table-striped table-hover">
                     <tr>
                         <th>ID</th>
                         <th>Full Name</th>
-                        <th>Username</th>
+                        <th>Sex</th>
+                        <th>Birthday</th>
+                        <th>Job</th>
+                        <th>Email</th>
+                        <th>Phonenumber</th>
+                        <th>Address</th>
                         <th>Actions</th>
                     </tr>
 
                     
                     <?php 
                         //Query to Get all Admin
-                        $sql = "SELECT * FROM tbl_admin";
+                        $sql = "SELECT * FROM tbl_profile";
                         //Execute the Query
                         $res = mysqli_query($conn, $sql);
 
@@ -83,9 +78,15 @@
                                     //And while loop will run as long as we have data in database
 
                                     //Get individual DAta
-                                    $id=$rows['admin_id'];
-                                    $full_name=$rows['admin_fullname'];
-                                    $username=$rows['admin_username'];
+                                    $id=$rows['pro_id'];
+                                    $full_name=$rows['fullname'];
+                                    $sex=$rows['sex'];
+                                    $birthday=$rows['birthday'];
+                                    $job=$rows['job'];
+                                    $email=$rows['email'];
+                                    $phone_number=$rows['phonenumber'];
+                                    $address=$rows['address'];
+                                    $user_id=$rows['user_id'];
 
                                     //Display the Values in our Table
                                     ?>
@@ -93,11 +94,15 @@
                                     <tr>
                                         <td><?php echo $id ?></td>
                                         <td><?php echo $full_name; ?></td>
-                                        <td><?php echo $username; ?></td>
+                                        <td><?php echo $sex; ?></td>
+                                        <td><?php echo $birthday; ?></td>
+                                        <td><?php echo $job; ?></td>
+                                        <td><?php echo $email; ?></td>
+                                        <td><?php echo $phone_number ?></td>
+                                        <td><?php echo $address ?></td>
                                         <td>
-                                            <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn-primary">Change Password</a>
-                                            <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>
-                                            <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a>
+                                            <a href="<?php echo SITEURL; ?>admin/up-password-user.php?id=<?php echo $user_id; ?>" class="btn-primary">Change Password</a>
+                                            <a href="<?php echo SITEURL; ?>admin/delete-user.php?id=<?php echo $user_id; ?>" class="btn-danger">Delete user</a>
                                         </td>
                                     </tr>
 

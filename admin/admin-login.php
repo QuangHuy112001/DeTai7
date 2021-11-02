@@ -54,33 +54,39 @@
     </body>
 </html>
 <?php 
-    include('constants.php');
+    //include('constants.php');
     //CHeck whether the Submit Button is Clicked or NOt
     if(isset($_POST['submit']))
     {
-        //Process for Login
-        //1. Get the Data from Login form
-        // $username = $_POST['username'];
-        // $password = md5($_POST['admin_password']);
+        include('constants.php');
+        // Process for Login
+        // 1. Get the Data from Login form
         $username =mysqli_real_escape_string($conn, $_POST['username']);
         
         $raw_password = password_hash($_POST['password'],PASSWORD_BCRYPT);
-        $password = mysqli_real_escape_string($conn, $raw_password);
 
-        //2. SQL to check whether the user with username and password exists or not
+        $password = mysqli_real_escape_string($conn, $raw_password);
+        // require'constants.php';
+        // $name=$_POST['username'];
+        // $raw_password = password_hash($_POST['password'],PASSWORD_BCRYPT);
+        // $pass=$raw_password;
+
+        // 2. SQL to check whether the user with username and password exists or not
         $sql = "SELECT * FROM tbl_admin WHERE admin_username='$username' AND admin_password='$password'";
         //3. Execute the Query
         $res = mysqli_query($conn, $sql);
-
+        // $result = $conn-> query($sql)
         //4. COunt rows to check whether the user exists or not
         $count = mysqli_num_rows($res);
+        // $sql = "SELECT * FROM tbl_admin WHERE admin_username='$username' AND admin_password='$password'";
+        // $result = $conn-> query($sql)
 
         if($count==1)
         {
             //User AVailable and Login Success
             $_SESSION['login'] = "<div class='success'>Login Successful.</div>";
             $_SESSION['user'] = $username; //TO check whether the user is logged in or not and logout will unset it
-
+            
             //REdirect to HOme Page/Dashboard
             header('location:'.SITEURL.'admin/');
         }
@@ -92,5 +98,16 @@
             header('location:'.SITEURL.'admin/admin-login.php');
         }
 
+        // if($result->num_rows >0){
+        //     while($row = $result->fetch_assoc())
+        //     {
+        //         $_SESSION['username'] = $name;
+        //         $_SESSION['password'] = $pass; 
+        //         header('location:'.SITEURL.'admin/')/TO check whether the user is logged in or not and logout will unset it
+        //         $row=$result->fetch_assoc();
+        //     }
+        // }else{
+        //     echo 'aaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        // }
     }
 ?>

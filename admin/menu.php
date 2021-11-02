@@ -18,7 +18,7 @@
         <div class="menu text-center">
             <div class="wrapper">
                 <ul>
-                    <li ><a href="#" style="font-size: 1.5em">Users</a></li>
+                    <li ><a href="manage-user.php" style="font-size: 1.5em">Users</a></li>
                     <li ><a href="index.php" style="font-size: 1.5em">Admin</a></li>
                     
                 </ul>
