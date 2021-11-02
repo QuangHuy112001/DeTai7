@@ -5,7 +5,7 @@ class User{
     protected $user_email;
     protected $user_pass;
     protected $hash_pass;
-
+    
     function __construct($db_connection){
         $this->db = $db_connection;
     }
@@ -72,7 +72,7 @@ class User{
                 $match_pass = password_verify($this->user_pass, $row['user_password']);
                 if($match_pass){
                     $_SESSION = [
-                        'user_id' => $row['user_id'],
+                        'id' => $row['id'],
                         'email' => $row['user_email']
                     ];
                     header('Location: Home-user.php');
@@ -83,7 +83,7 @@ class User{
                 
             }
             else{
-                return ['errorMessage' => 'Invalid username!'];
+                return ['errorMessage' => 'Invalid email address!'];
             }
 
         }
@@ -96,7 +96,7 @@ class User{
     // FIND USER BY ID
     function find_user_by_id($id){
         try{
-            $find_user = $this->db->prepare("SELECT * FROM `tbl_user` WHERE user_id = ?");
+            $find_user = $this->db->prepare("SELECT * FROM `tbl_user` WHERE id = ?");
             $find_user->execute([$id]);
             if($find_user->rowCount() === 1){
                 return $find_user->fetch(PDO::FETCH_OBJ);
