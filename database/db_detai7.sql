@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2021 at 04:13 PM
+-- Generation Time: Nov 02, 2021 at 03:25 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -44,6 +44,30 @@ CREATE TABLE `friend_request` (
   `sender` int(10) UNSIGNED NOT NULL,
   `receiver` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `posts`
+--
+
+CREATE TABLE `posts` (
+  `id` int(11) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `url` varchar(100) NOT NULL,
+  `content` text NOT NULL,
+  `image` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `title`, `url`, `content`, `image`) VALUES
+(5, 'trung', 'kjksdl', 'đây là trang của trung tạo', '1.png'),
+(6, 'Lê Trung', '123456', 'Chào ngày mới ', '8.png'),
+(7, 'Lê Trung', 'djjkf', 'kjklhagfkhgssfhjkgfjkhfhjdfkgjahskfjgdsahj ghjdfjhhdsjhfjsdhfjkhsadfgsdhjgfjhgsdfhjgs', '9.png'),
+(8, 'trung', 'jksjdh', 'shfjkahk', '12.png');
 
 -- --------------------------------------------------------
 
@@ -90,7 +114,8 @@ CREATE TABLE `tbl_profile` (
 --
 
 INSERT INTO `tbl_profile` (`pro_id`, `fullname`, `sex`, `birthday`, `job`, `email`, `phonenumber`, `address`, `user_id`) VALUES
-('1', 'Vũ Tiến Chinh', 'Nam', '2001-01-31', 'Sinh Viên', 'Chinhvu1031@gmail.com', '0389370877', 'Thái Bình', 1);
+('8', 'Lê Tuấn Trung', 'Male', '2001-08-12', 'Student', 'trung123@gmail.com', '0958463351', 'Hà Nội', 8),
+('9', 'Bùi Hữu Quang Huy ', 'Male', '0000-00-00', 'Student', 'huy123@gmail.com', '0954862245', 'Quảng Ninh', 9);
 
 -- --------------------------------------------------------
 
@@ -99,7 +124,7 @@ INSERT INTO `tbl_profile` (`pro_id`, `fullname`, `sex`, `birthday`, `job`, `emai
 --
 
 CREATE TABLE `tbl_user` (
-  `user_id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `username` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_password` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -110,12 +135,9 @@ CREATE TABLE `tbl_user` (
 -- Dumping data for table `tbl_user`
 --
 
-INSERT INTO `tbl_user` (`user_id`, `username`, `user_email`, `user_password`, `user_image`) VALUES
-(1, 'chinh', 'Chinhvu1031@gmail.com', '123456', NULL),
-(2, 'trung', 'trung123@gmai.com', '$2y$10$59BKQzN4rgYXpoWKdbPHmu5hzVQJhHWw5J9uSov/sxk.MWL9sKTgC', '6.png'),
-(3, 'huy', 'huy123@gmail.com', '$2y$10$XQIcg6hi6ktJ07kdp3GiROXGWT8uEC0mzPm09tWZW1xrpGgq/DtjO', '7.png'),
-(4, 'hoàng anh', 'hanh123@gmail.com', '$2y$10$rkvsfqQiKA3p4uxoKT//8.L8hd28Qt0QHVQf0Z7JmWMwmb7QiENTy', '12.png'),
-(5, 'châm anh', 'chamanh123@gmail.com', '$2y$10$hoXxPDJ.9gcD6JXdJyn/FeN1N6SLHqFngER0tHKyZK/GDshBVcYlW', '9.png');
+INSERT INTO `tbl_user` (`id`, `username`, `user_email`, `user_password`, `user_image`) VALUES
+(8, 'trung', 'trung123@gmai.com', '$2y$10$hitSIByRBd48iB1dqg2HB.N1Ap5sZdQmAzpLrS8nAsuBYwdCXBa2.', '12.png'),
+(9, 'huy', 'huy123@gmail.com', '$2y$10$PCMAZN2rBjv023jBVEQtOu0Sk7q6PMihGf7NHhgwa.mtYFL8gXLM6', '8.png');
 
 --
 -- Indexes for dumped tables
@@ -138,6 +160,12 @@ ALTER TABLE `friend_request`
   ADD KEY `receiver` (`receiver`);
 
 --
+-- Indexes for table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
@@ -156,7 +184,7 @@ ALTER TABLE `tbl_profile`
 -- Indexes for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  ADD PRIMARY KEY (`user_id`),
+  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`),
   ADD UNIQUE KEY `user_email` (`user_email`),
   ADD UNIQUE KEY `user_password` (`user_password`);
@@ -178,6 +206,12 @@ ALTER TABLE `friend_request`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
@@ -187,7 +221,7 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
@@ -197,21 +231,21 @@ ALTER TABLE `tbl_user`
 -- Constraints for table `friends`
 --
 ALTER TABLE `friends`
-  ADD CONSTRAINT `friends_ibfk_1` FOREIGN KEY (`user_one`) REFERENCES `tbl_user` (`user_id`),
-  ADD CONSTRAINT `friends_ibfk_2` FOREIGN KEY (`user_two`) REFERENCES `tbl_user` (`user_id`);
+  ADD CONSTRAINT `friends_ibfk_1` FOREIGN KEY (`user_one`) REFERENCES `tbl_user` (`id`),
+  ADD CONSTRAINT `friends_ibfk_2` FOREIGN KEY (`user_two`) REFERENCES `tbl_user` (`id`);
 
 --
 -- Constraints for table `friend_request`
 --
 ALTER TABLE `friend_request`
-  ADD CONSTRAINT `friendre_ibfk_1` FOREIGN KEY (`sender`) REFERENCES `tbl_user` (`user_id`),
-  ADD CONSTRAINT `friendre_ibfk_2` FOREIGN KEY (`receiver`) REFERENCES `tbl_user` (`user_id`);
+  ADD CONSTRAINT `friendre_ibfk_1` FOREIGN KEY (`sender`) REFERENCES `tbl_user` (`id`),
+  ADD CONSTRAINT `friendre_ibfk_2` FOREIGN KEY (`receiver`) REFERENCES `tbl_user` (`id`);
 
 --
 -- Constraints for table `tbl_profile`
 --
 ALTER TABLE `tbl_profile`
-  ADD CONSTRAINT `tbl_profile_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `tbl_user` (`user_id`);
+  ADD CONSTRAINT `tbl_profile_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `tbl_user` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
