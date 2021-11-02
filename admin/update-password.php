@@ -59,9 +59,9 @@
 
                 //1. Get the DAta from Form
                 $id=$_POST['id'];
-                $current_password = password_hash($_POST['current_password'],PASSWORD_BCRYPT);
-                $new_password = password_hash($_POST['new_password'],PASSWORD_BCRYPT);
-                $confirm_password = password_hash($_POST['confirm_password'],PASSWORD_BCRYPT);
+                $current_password =md5($_POST['current_password']);
+                $new_password = md5($_POST['new_password']);
+                $confirm_password = md5($_POST['confirm_password']);
 
 
                 //2. Check whether the user with current ID and Current Password Exists or Not
@@ -74,6 +74,7 @@
                 {
                     //CHeck whether data is available or not
                     $count=mysqli_num_rows($res);
+
 
                     if($count==1)
                     {
@@ -109,6 +110,7 @@
                                 //Redirect the User
                                 header('location:'.SITEURL.'admin/');
                             }
+                            
                         }
                         else
                         {
@@ -123,8 +125,11 @@
                     {
                         //User Does not Exist Set Message and REdirect
                         $_SESSION['user-not-found'] = "<div class='error'>User Not Found. </div>";
+                        // echo $new_password;
+                        // echo $confirm_password;
                         //Redirect the User
                         header('location:'.SITEURL.'admin/');
+
                     }
                 }
 

@@ -1,7 +1,7 @@
 <?php include('constants.php'); ?>
 <html>
     <head>
-        <link rel="stylesheet" href="admin1.css">
+        <link rel="stylesheet" href="css/admin1.css">
         <title>Form-Login</title>
     </head>
     <body>
@@ -63,7 +63,7 @@
         // 1. Get the Data from Login form
         $username =mysqli_real_escape_string($conn, $_POST['username']);
         
-        $raw_password = password_hash($_POST['password'],PASSWORD_BCRYPT);
+        $raw_password = md5($_POST['password']);
 
         $password = mysqli_real_escape_string($conn, $raw_password);
         // require'constants.php';

@@ -52,8 +52,8 @@
 
                 //1. Get the DAta from Form
                 $id=$_POST['id'];
-                $new_password = password_hash($_POST['new_password'],PASSWORD_BCRYPT);
-                $confirm_password = password_hash($_POST['confirm_password'],PASSWORD_BCRYPT);
+                $new_password = md5($_POST['new_password']);
+                $confirm_password = md5($_POST['confirm_password']);
 
 
                 //2. Check whether the user with current ID and Current Password Exists or Not
