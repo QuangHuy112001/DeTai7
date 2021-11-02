@@ -1,4 +1,23 @@
 <?php
+require 'includes/init.php';
+if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
+    $user_data = $user_obj->find_user_by_id($_SESSION['id']);
+    if ($user_data ===  false) {
+        header('Location: logout.php');
+        exit;
+    }
+    // FETCH ALL USERS WHERE ID IS NOT EQUAL TO MY ID
+    $all_users = $user_obj->all_users($_SESSION['id']);
+} else {
+    header('Location: logout.php');
+    exit;
+}
+// REQUEST NOTIFICATION NUMBER
+$get_req_num = $frnd_obj->request_notification($_SESSION['id'], false);
+// TOTAL FRIENDS
+$get_frnd_num = $frnd_obj->get_all_friends($_SESSION['id'], false);
+?>
+<?php
 include 'header.php';
 ?>
 <link rel="stylesheet" href="css/ViewProfile.css">
@@ -27,7 +46,7 @@ include 'header.php';
                 <div class="card-body">
                     <img src="img/avatar-user.png" alt="" class="rounded-circle" width="150">
                     <div class="mt-3">
-                        <h3>Tuấn Trung</h3>
+                        <h3><?php echo  $user_data->username; ?></h3>
                         <a href="Home-user.php">Home</a>
                         <hr>
                         <a href="Contact.php">Contact</a>
@@ -52,7 +71,7 @@ include 'header.php';
                                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                                     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                                </svg>
-                               Lê Tuấn trung
+                               <?php echo  $user_data->username; ?>
                             
                         </div>
                         <hr>
@@ -65,7 +84,7 @@ include 'header.php';
                                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                                     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                                 </svg>
-                                Female
+                                Male
                             </div>
                         </div>
                         <hr>
@@ -91,7 +110,7 @@ include 'header.php';
                                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                                     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                                 </svg>
-                                letrung16072001@gmail.com
+                                <?php echo  $user_data->user_email; ?>
                             </div>
                         </div>
                         <hr>
@@ -104,7 +123,7 @@ include 'header.php';
                                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                                     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                                 </svg>
-                                0389770968
+                                0984745565
                             </div>
                         </div>
                         <hr>
@@ -117,7 +136,7 @@ include 'header.php';
                                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                                     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                                 </svg>
-                                street no.4, abc
+                                Hà Nội
                             </div>
                         </div>
                         <hr>

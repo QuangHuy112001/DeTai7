@@ -126,4 +126,37 @@ class User{
             die($e->getMessage());
         }
     }
+
+    // FIND PROFILE USER
+    function find_profile_by_id($ids){
+        try{
+            $find_pro = $this->db->prepare("SELECT * FROM `tbl_profile` WHERE pro_id = ?");
+            $find_pro->execute([$ids]);
+            if($find_pro->rowCount() === 1){
+                return $find_pro->fetch(PDO::FETCH_OBJ);
+            }
+            else{
+                return false;
+            }
+        }
+        catch (PDOException $e) {
+            die($e->getMessage());
+        }
+    }
+     // FETCH ALL USERS WHERE ID IS NOT EQUAL TO MY ID
+     function all_pro($ids){
+        try{
+            $get_pro = $this->db->prepare("SELECT pro_id, fullname, sex, birthday, job,email,phonenumber,address FROM `tbl_profile` WHERE pro_id != ?");
+            $get_pro->execute([$ids]);
+            if($get_pro->rowCount() > 0){
+                return $get_pro->fetchAll(PDO::FETCH_OBJ);
+            }
+            else{
+                return false;
+            }
+        }
+        catch (PDOException $e) {
+            die($e->getMessage());
+        }
+    }
 }

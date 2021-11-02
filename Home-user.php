@@ -1,15 +1,14 @@
 <?php
 require 'includes/init.php';
-if(isset($_SESSION['id']) && isset($_SESSION['email'])){
+if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
     $user_data = $user_obj->find_user_by_id($_SESSION['id']);
-    if($user_data ===  false){
+    if ($user_data ===  false) {
         header('Location: logout.php');
         exit;
     }
     // FETCH ALL USERS WHERE ID IS NOT EQUAL TO MY ID
     $all_users = $user_obj->all_users($_SESSION['id']);
-}
-else{
+} else {
     header('Location: logout.php');
     exit;
 }
@@ -60,7 +59,9 @@ $get_frnd_num = $frnd_obj->get_all_friends($_SESSION['id'], false);
                         <img src="img/avatar-user.png">
                     </div>
                     <div class="handle">
-                        <a href="ViewProfile.php"><h4>Lê Trung</h4></a>
+                        <a href="ViewProfile.php">
+                            <h4><?php echo  $user_data->username; ?></h4>
+                        </a>
                         <p class="text-muted">
                             20 tuổi - Cung cự giải
                         </p>
@@ -131,7 +132,7 @@ $get_frnd_num = $frnd_obj->get_all_friends($_SESSION['id'], false);
                                     <img src="img/avatar-user.png">
                                 </div>
                                 <div class="ingo">
-                                    <h3>Lê Trung</h3>
+                                    <h3><?php echo  $user_data->username; ?></h3>
                                     <small>31/10/2021</small>
                                 </div>
                             </div>
@@ -144,14 +145,14 @@ $get_frnd_num = $frnd_obj->get_all_friends($_SESSION['id'], false);
                 </div>
 
                 <div class="feed">
-                        <div class="head">
-                            <div class="user">
-                            <?php require 'posts_xuly.php';?>
+                    <div class="head">
+                        <div class="user">
+                            <?php require 'posts_xuly.php'; ?>
                         </div>
                     </div>
                     <!---------------- END OF FEED ----------------->
                 </div>
-               
+
                 <!------------------------------- END OF FEEDS ------------------------------------>
             </div>
             <!--======================== END OF MIDDLE ==========================-->
