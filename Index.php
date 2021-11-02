@@ -27,7 +27,7 @@
     <header>
         <div class="header-text">
             <h1>Xuất bản ý tưởng theo cách riêng của bạn</h1>
-            <a href="#">Tạo Blog của bạn</a>
+            <a href="Login.php">Tạo Blog của bạn</a>
         </div>
 
     </header>

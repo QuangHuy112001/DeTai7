@@ -20,8 +20,6 @@ $get_frnd_num = $frnd_obj->get_all_friends($_SESSION['id'], false);
 <?php
 include 'header.php';
 ?>
-<link rel="stylesheet" href="css/ViewProfile.css">
-<!--Logo-->
 <div class="container">
     <div class="row">
         <nav class="navbar navbar-expand-lg">
@@ -60,66 +58,46 @@ include 'header.php';
         </div>
         <div class="col-md-8 mt-1">
             <div class="card mb-3 content">
-                <h1 class="m-3 pt-3">About</h1>
+                <h1 class="m-3 pt-3">Edit</h1>
                 <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-3">
-                               <h6>Full name</h6>
-                            </div>
-                            <div class="col-md-9 ">
-                               <?php echo  $user_data->username; ?>
-                            
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <h6>Sex</h6>
-                            </div>
-                            <div class="col-md-9 ">
-
-                                Male
+                    <form action="process-add-employee.php" method="post">
+                        <div class="form-group row">
+                            <label for="empName" class="col-sm-2 col-form-label">Full Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="empName" name="empName">
                             </div>
                         </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <h6>Job</h6>
-                            </div>
-                            <div class="col-md-9 ">
-
-                                Student
+                        <div class="form-group row">
+                            <label for="empPosition" class="col-sm-2 col-form-label">Sex</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="empPosition" name="empPosition">
                             </div>
                         </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <h6>Email</h6>
-                            </div>
-                            <div class="col-md-9 ">
-                                <?php echo  $user_data->user_email; ?>
+                        <div class="form-group row">
+                            <label for="empEmail" class="col-sm-2 col-form-label">Job</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="empEmail" name="empEmail">
                             </div>
                         </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <h6>Phone</h6>
-                            </div>
-                            <div class="col-md-9">
-                                0984745565
+                        <div class="form-group row">
+                            <label for="empMobile" class="col-sm-2 col-form-label">Phone</label>
+                            <div class="col-sm-10">
+                                <input type="tel" class="form-control" id="empMobile" name="empMobile">
                             </div>
                         </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <h6>Address</h6>
-                            </div>
-                            <div class="col-md-9 ">
-                                Hà Nội
+                        <div class="form-group row">
+                            <label for="empMobile" class="col-sm-2 col-form-label">Address</label>
+                            <div class="col-sm-10">
+                                <input type="tel" class="form-control" id="empMobile" name="empMobile">
                             </div>
                         </div>
-                        <hr>
-                    </div>
+                        <div>
+                            <form class="d-flex">
+                                <button class="btn btn-outline-success" type="submit">Post</button>
+                            </form>
+                        </div>
                 </div>
+
             </div>
         </div>
     </div>
