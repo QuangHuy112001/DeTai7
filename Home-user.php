@@ -95,6 +95,10 @@ $get_frnd_num = $frnd_obj->get_all_friends($_SESSION['id'], false);
                         <span><i class="uil uil-envelope-alt"></i></span>
                         <h3>Messagse</h3>
                     </a>
+                    <a href="profile.php" class="menu-item" style="color: black;">
+                        <span><i class="uil uil-user-plus"></i></span>
+                        <h3>Friend</h3>
+                    </a>
                     <a class="menu-item" id="theme">
                         <span><i class="uil uil-palette"></i></span>
                         <h3>Theme</h3>
