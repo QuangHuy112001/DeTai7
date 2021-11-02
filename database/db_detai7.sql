@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 02, 2021 at 03:25 PM
+-- Generation Time: Nov 02, 2021 at 06:42 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `friends` (
-  `user_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `user_one` int(10) UNSIGNED NOT NULL,
   `user_two` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -40,7 +40,7 @@ CREATE TABLE `friends` (
 --
 
 CREATE TABLE `friend_request` (
-  `user_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `sender` int(10) UNSIGNED NOT NULL,
   `receiver` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -147,7 +147,7 @@ INSERT INTO `tbl_user` (`id`, `username`, `user_email`, `user_password`, `user_i
 -- Indexes for table `friends`
 --
 ALTER TABLE `friends`
-  ADD PRIMARY KEY (`user_id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `user_one` (`user_one`),
   ADD KEY `user_two` (`user_two`);
 
@@ -155,7 +155,7 @@ ALTER TABLE `friends`
 -- Indexes for table `friend_request`
 --
 ALTER TABLE `friend_request`
-  ADD PRIMARY KEY (`user_id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `sender` (`sender`),
   ADD KEY `receiver` (`receiver`);
 
@@ -197,13 +197,13 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `friends`
 --
 ALTER TABLE `friends`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `friend_request`
 --
 ALTER TABLE `friend_request`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `posts`
