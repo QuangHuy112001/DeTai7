@@ -1,7 +1,7 @@
 <?php 
 
     include('constants.php'); 
-    // include('login-check.php');
+    include('login-check.php');
 
 ?>
 
@@ -20,6 +20,7 @@
                 <ul>
                     <li ><a href="manage-user.php" style="font-size: 1.5em">Users</a></li>
                     <li ><a href="index.php" style="font-size: 1.5em">Admin</a></li>
+                    <li ><a href="logout.php" style="font-size: 1.5em">Logout</a></li>
                     
                 </ul>
             </div>
