@@ -5,8 +5,9 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
     $result = $user_obj->singUpUser($_POST['username'], $_POST['email'], $_POST['password']);
 }
 // IF USER ALREADY LOGGED IN
-if (isset($_SESSION['user'])) {
+if (isset($_SESSION['email'])) {
     header('Location: Home-user.php');
+    exit;
 }
 ?>
 <!DOCTYPE html>

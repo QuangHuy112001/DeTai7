@@ -1,22 +1,11 @@
 <?php
 require 'includes/init.php';
 if(isset($_SESSION['user_id']) && isset($_SESSION['email'])){
-    $user_data = $user_obj->find_user_by_id($_SESSION['user_id']);
-    if($user_data ===  false){
-        header('Location: logout.php');
-        exit;
-    }
-    // FETCH ALL USERS WHERE ID IS NOT EQUAL TO MY ID
-    $all_users = $user_obj->all_users($_SESSION['user_id']);
 }
 else{
     header('Location: logout.php');
     exit;
 }
-// REQUEST NOTIFICATION NUMBER
-$get_req_num = $frnd_obj->request_notification($_SESSION['user_id'], false);
-// TOTAL FRIENDS
-$get_frnd_num = $frnd_obj->get_all_friends($_SESSION['user_id'], false);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,12 +34,11 @@ $get_frnd_num = $frnd_obj->get_all_friends($_SESSION['user_id'], false);
             <div class="create">
                 <label class="btn btn-primary" for="create-post">Create</label>
                 <div class="profile-photo">
-                    <img src="img/avatar-user.png">
+                    <a href="addfr/profile.php"><img src="img/avatar-user.png"></a>
                 </div>
             </div>
         </div>
     </nav>
-
     <!------------------------- MAIN -------------------------->
     <main>
         <div class="container">
@@ -105,8 +93,8 @@ $get_frnd_num = $frnd_obj->get_all_friends($_SESSION['user_id'], false);
                     </a>
                 </div>
                 <!------------------- END OF SIDEBAR -------------------->
-                <label for="create-post" class="btn btn-primary">Create Post</label>
-                <label for="log-out" class="btn btn-primary"><a href="Index.php" style="color: white;">Log Out</a></label>
+                <label for="create-post" class="btn btn-primary"><a href="posts_add.php" style="color: white;">Create Post</a></label>
+                <label for="log-out" class="btn btn-primary"><a href="logout.php" style="color: white;">Log Out</a></label>
             </div>
             <!------------------- END OF LEFT -------------------->
 

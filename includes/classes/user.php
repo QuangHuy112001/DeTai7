@@ -98,7 +98,7 @@ class User{
         try{
             $find_user = $this->db->prepare("SELECT * FROM `tbl_user` WHERE user_id = ?");
             $find_user->execute([$id]);
-            if($find_user->rowCount() === 8){
+            if($find_user->rowCount() === 1){
                 return $find_user->fetch(PDO::FETCH_OBJ);
             }
             else{
