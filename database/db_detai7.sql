@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 02, 2021 at 06:42 PM
+-- Generation Time: Nov 03, 2021 at 10:26 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -33,6 +33,15 @@ CREATE TABLE `friends` (
   `user_two` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `friends`
+--
+
+INSERT INTO `friends` (`id`, `user_one`, `user_two`) VALUES
+(3, 9, 8),
+(4, 8, 10),
+(5, 8, 11);
+
 -- --------------------------------------------------------
 
 --
@@ -44,6 +53,13 @@ CREATE TABLE `friend_request` (
   `sender` int(10) UNSIGNED NOT NULL,
   `receiver` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `friend_request`
+--
+
+INSERT INTO `friend_request` (`id`, `sender`, `receiver`) VALUES
+(5, 10, 9);
 
 -- --------------------------------------------------------
 
@@ -137,7 +153,9 @@ CREATE TABLE `tbl_user` (
 
 INSERT INTO `tbl_user` (`id`, `username`, `user_email`, `user_password`, `user_image`) VALUES
 (8, 'trung', 'trung123@gmai.com', '$2y$10$hitSIByRBd48iB1dqg2HB.N1Ap5sZdQmAzpLrS8nAsuBYwdCXBa2.', '12.png'),
-(9, 'huy', 'huy123@gmail.com', '$2y$10$PCMAZN2rBjv023jBVEQtOu0Sk7q6PMihGf7NHhgwa.mtYFL8gXLM6', '8.png');
+(9, 'huy', 'huy123@gmail.com', '$2y$10$PCMAZN2rBjv023jBVEQtOu0Sk7q6PMihGf7NHhgwa.mtYFL8gXLM6', '8.png'),
+(10, 'chinh', 'chinh123@gmail.com', '$2y$10$Qb30tN.cPkcwAeRVNhxM4uh10srnDVxeLX2qmH9.GQ3TrYbJFK/J.', '12.png'),
+(11, 'trang', 'trang123@gmail.com', '$2y$10$qLcjNW7M/Mj3mQzea8Kv4exo9PtAEe8KVlVqlZKluYTEDD1nhdyj.', '3.png');
 
 --
 -- Indexes for dumped tables
@@ -197,13 +215,13 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `friends`
 --
 ALTER TABLE `friends`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `friend_request`
 --
 ALTER TABLE `friend_request`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `posts`
@@ -221,7 +239,7 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
