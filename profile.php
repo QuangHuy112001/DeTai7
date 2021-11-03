@@ -25,7 +25,7 @@ $get_frnd_num = $frnd_obj->get_all_friends($_SESSION['id'], false);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo  $user_data->username;?></title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/addfr.css">
 </head>
 <body>
     <div class="profile_container">

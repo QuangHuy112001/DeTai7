@@ -25,79 +25,14 @@ h1{
     border: 1px solid rgba(23,23,23, .1);
     border-radius: 3px;
 }
-.login_signup_container input[type='text'],
-.login_signup_container input[type='email'],
-.login_signup_container input[type='password']{
-    width: 100%;
-    padding: 10px;
-    border: 0;
-    border-bottom: 1px solid #8795A1;
-    outline: none;
-    margin-bottom: 10px;
-    font-size: 14px;
-    background: none;
-    color: #232323;
-    font-family: 'Open Sans', sans-serif;
-}
-.login_signup_container input[type='text']:focus,
-.login_signup_container input[type='email']:focus,
-.login_signup_container input[type='password']:focus{
-    border-color: #606F7B;
-    
-}
-.login_signup_container label{
-    font-weight: bold;
-    color: #232323;
-}
-.login_signup_container input[type='submit']{
-    color: #ffffff;
-    padding: 10px 20px;
-    font-size: 14px;
-    text-transform: uppercase;
-    cursor: pointer;
-    border: 1px solid rgba(23,23,23, .1);
-    outline: none;
-    background-color: #1F9D55;
-    
-}
-.form_link{
-    float: right;
-    font-size: 16px;
-}
-.site_link,.login_signup_container p{
-    font-size: 14px;
-    text-align: center;
-    color: #3D4852;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-.site_link:hover,.form_link:hover,.login_signup_container p a:hover{
-    text-decoration: underline;
-    color: #1F9D55;
-}
-
-.login_signup_container .errorMsg{
-    border: 2px solid #CC1F1A;
-    color: #CC1F1A;
-    letter-spacing: normal;
-    font-size: 16px;
-    padding: 10px;
-}
-.login_signup_container .successMsg{
-    border: 2px solid #1F9D55;
-    color: #1F9D55;
-    letter-spacing: normal;
-    font-size: 16px;
-    padding: 10px;
-}
-
 /* PROFILE.PHP */
 .profile_container{
     margin:  0 auto;
     max-width: 600px;
-    background-color: #F8FAFC;
+    background-color: #ffffff;
     border: 1px solid rgba(23,23,23, .1);
     padding: 10px;
+    
 }
 
 .profile_container nav ul{
@@ -121,8 +56,10 @@ h1{
 }
 
 .profile_container nav ul li a:hover{
-    background-color: #F3EBFF;
+    background-color: #8a3377;
     color: #000000;
+    border-radius: 50%;
+    color: #FFF;
 }
 
 .profile_container nav .badge{
@@ -162,15 +99,15 @@ h1{
 }
 .active{
     outline: none;
-    background-color: #078f71 !important;
+    background-color: #8a3377 !important;
     color: #FFF !important;
+    border-radius: 50%;
 }
 
 /* ALL USERS */
 
 .all_users .usersWrapper{   
     display: flex;
-
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -190,10 +127,9 @@ h1{
     width: 50px;
     height: 50px;
     overflow: hidden;
-    border: 1px solid rgba(23,23,23, .1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     margin-right: 5px;
-    border-radius: 2px;
-    background-color: #E6E8FF;
+    border-radius: 50%;
 }
 .user_box .user_img img{
     height: 100%;
@@ -216,7 +152,7 @@ h1{
 }
 
 .see_profileBtn{
-    background-color: #794ACF;
+    background-color: #9f2ba3;
     border: 1px solid rgba(23,23,23, .1);
     color: #FFF;
     font-size: 12px;
@@ -224,7 +160,7 @@ h1{
     text-transform: uppercase;
 }
 .see_profileBtn:hover{
-    background-color: #382B5F;
+    background-color: #7960c5;
 }
 
 .actions{
@@ -244,18 +180,18 @@ h1{
 }
 
 .acceptRequest,.sendRequest{
-    background-color: #794ACF;
+    background-color: #9b4141;
     color: #FFF;
 }
 .acceptRequest:hover,.sendRequest:hover{
-    background-color: #382B5F;
+    background-color: #2d1183;
 }
 .unfriend, .ignoreRequest,.cancleRequest{
-    background-color: #EF5753;
+    background-color: #8a3377;
     color: #FFF;
 }
 .unfriend:hover,.ignoreRequest:hover,.cancleRequest:hover{
-    background-color: #E3342F;
+    background-color: #5c1f4f;
     
 }
 
