@@ -1,5 +1,5 @@
 # DeTai7
-Mã nhóm: Nhóm 2 - Đề tài 7
+Mã nhóm: 05
 Các thành viên: - Lê Tuấn Trung
                 - Vũ Tiến Chinh
                 - Bùi Hữu Quang Huy
